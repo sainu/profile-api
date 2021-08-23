@@ -1,0 +1,18 @@
+{
+	"cleanUrls": true,
+	"trailingSlash": false,
+	"redirects": [
+		{ "source": "/", "destination": "/profile" }
+	],
+	"headers": [
+		{
+			"source": "/(.*)",
+			"headers": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			]
+		}
+	]
+}
