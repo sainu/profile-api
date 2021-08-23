@@ -15,5 +15,8 @@ func NewRouter() (*echo.Echo, error) {
 	profileController := controllers.NewProfileController()
 	router.GET("/profile", profileController.Show)
 
+	webLinksController := controllers.NewWebLinksController()
+	router.GET("/web_links", webLinksController.Index)
+
 	return router, nil
 }
