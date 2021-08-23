@@ -12,8 +12,8 @@ func NewRouter() (*echo.Echo, error) {
 	router.Use(middleware.Logger())
 	router.Use(middleware.Recover())
 
-	profileController := controllers.NewProfileController()
-	router.GET("/profile", profileController.Show)
+	profilesController := controllers.NewProfilesController()
+	router.GET("/profile", profilesController.Show)
 
 	webLinksController := controllers.NewWebLinksController()
 	router.GET("/web_links", webLinksController.Index)
