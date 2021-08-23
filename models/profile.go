@@ -9,7 +9,6 @@ type Profile struct {
 	FamilyNameEn    string `json:"family_name_en"`
 	GivenNameEn     string `json:"given_name_en"`
 	Nickname        string `json:"nickname"`
-	ImageURL        string `json:"image_url"`
 	Job             string `json:"job"`
 	Email           string `json:"email"`
 	Bio             string `json:"bio"`
@@ -26,7 +25,6 @@ func GetProfile() *Profile {
 		FamilyNameEn:    "Saino",
 		GivenNameEn:     "Katsutoshi",
 		Nickname:        "sainu",
-		ImageURL:        "/images/profileImage.jpg",
 		Job:             "Software Program Developer",
 		Email:           "katsutoshi.saino@gmail.com",
 		Bio:             "東京都出身のエンジニア。大学在学中にインターンや受託でWeb開発を経験。その後、個人開発を経て、お金の会社に就職。Railsでのサーバー開発から始まり、JSのFW(AngularやNuxt)を使ったフロントエンド開発、AWSでインフラの構築を経験してきました。",

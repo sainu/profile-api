@@ -11,7 +11,6 @@ type ProfileView struct {
 	FamilyNameEn    string `json:"family_name_en"`
 	GivenNameEn     string `json:"given_name_en"`
 	Nickname        string `json:"nickname"`
-	ImageURL        string `json:"image_url"`
 	Job             string `json:"job"`
 	Email           string `json:"email"`
 	Bio             string `json:"bio"`
@@ -28,7 +27,6 @@ func NewProfileView(profile *models.Profile) *ProfileView {
 		FamilyNameEn:    profile.FamilyNameEn,
 		GivenNameEn:     profile.GivenNameEn,
 		Nickname:        profile.Nickname,
-		ImageURL:        profile.ImageURL,
 		Job:             profile.Job,
 		Email:           profile.Email,
 		Bio:             profile.Bio,
