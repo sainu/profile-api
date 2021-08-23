@@ -1,9 +1,6 @@
 {
 	"cleanUrls": true,
 	"trailingSlash": false,
-	"redirects": [
-		{ "source": "/", "destination": "/profile" }
-	],
 	"headers": [
 		{
 			"source": "/(.*)",
@@ -14,5 +11,8 @@
 				}
 			]
 		}
+	],
+	"rewrites": [
+		{ "source": "/api/(.*)", "destination": "/api" }
 	]
 }
