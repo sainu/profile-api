@@ -15,6 +15,9 @@ func NewRouter() (*echo.Echo, error) {
 	profilesController := controllers.NewProfilesController()
 	router.GET("/profile", profilesController.Show)
 
+	skillsController := controllers.NewSkillsController()
+	router.GET("/skills", skillsController.Index)
+
 	socialLinksController := controllers.NewSocialLinksController()
 	router.GET("/social_links", socialLinksController.Index)
 
