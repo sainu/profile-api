@@ -9,5 +9,5 @@ bin/local_server
 ## Deployment
 
 ```
-vercel --prod
+bin/deploy-prod
 ```
