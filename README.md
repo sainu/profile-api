@@ -3,8 +3,7 @@
 ## Development
 
 ```
-vercel login --github
-vercel dev --listen [Port]
+bin/local_server
 ```
 
 ## Deployment
