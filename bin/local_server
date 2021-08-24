@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+BASIC_AUTH_USERNAME=local BASIC_AUTH_PASSWORD=secret vercel dev --listen 3001

@@ -6,3 +6,6 @@ services:
     tty: true
     volumes:
       - .:/go/src/github.com/sainu/profile-api
+    environment:
+      - BASIC_AUTH_USERNAME=local
+      - BASIC_AUTH_PASSWORD=secret
