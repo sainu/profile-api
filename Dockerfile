@@ -1,7 +1,10 @@
 FROM golang:1.16.0-buster
 
-RUN apt-get update && apt-get install -y \
-  git
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  git \
+  curl \
+  less \
+  vim
 
 # vscodeのgolang.goの依存ライブラリ
 RUN go get github.com/uudashr/gopkgs \
