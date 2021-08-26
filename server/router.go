@@ -13,6 +13,9 @@ func NewRouter() (*echo.Echo, error) {
 	router.Use(middleware.Recover())
 	router.Use(middleware.BasicAuth(BasicAuthHandler))
 
+	experiencesController := controllers.NewExperiencesController()
+	router.GET("/api/experiences", experiencesController.Index)
+
 	profilesController := controllers.NewProfilesController()
 	router.GET("/api/profile", profilesController.Show)
 
