@@ -10,56 +10,48 @@ type Skill struct {
 func GetAllSkills() *[]Skill {
 	return &[]Skill{
 		{
-			Name:  "TypeScript",
-			Score: 50,
+			Name:  "Ruby on Rails",
+			Score: 85,
 		},
 		{
 			Name:  "Ruby",
-			Score: 60,
+			Score: 82,
 		},
 		{
-			Name:  "Go",
-			Score: 40,
-		},
-		{
-			Name:  "Ruby on Rails",
-			Score: 67,
+			Name:  "TypeScript",
+			Score: 73,
 		},
 		{
 			Name:  "Vue.js",
-			Score: 58,
+			Score: 70,
 		},
 		{
 			Name:  "Nuxt.js",
-			Score: 55,
-		},
-		{
-			Name:  "React.js",
-			Score: 48,
+			Score: 70,
 		},
 		{
 			Name:  "Next.js",
-			Score: 45,
+			Score: 63,
 		},
 		{
-			Name:  "MySQL",
-			Score: 55,
-		},
-		{
-			Name:  "Redis",
-			Score: 55,
+			Name:  "React.js",
+			Score: 60,
 		},
 		{
 			Name:  "Docker",
 			Score: 53,
 		},
 		{
-			Name:  "S3",
-			Score: 53,
+			Name:  "MySQL",
+			Score: 45,
 		},
 		{
-			Name:  "EC2",
-			Score: 53,
+			Name:  "Redis",
+			Score: 40,
+		},
+		{
+			Name:  "Go",
+			Score: 20,
 		},
 	}
 }
