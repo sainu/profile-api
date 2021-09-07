@@ -3,7 +3,7 @@ package views
 import (
 	"time"
 
-	"github.com/sainu/profile-api/models"
+	"github.com/sainu/profile-api/pkg/models"
 )
 
 // ExperienceView is struct of experience view

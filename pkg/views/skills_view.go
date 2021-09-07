@@ -1,7 +1,7 @@
 package views
 
 import (
-	"github.com/sainu/profile-api/models"
+	"github.com/sainu/profile-api/pkg/models"
 )
 
 // SkillView is struct of skill view

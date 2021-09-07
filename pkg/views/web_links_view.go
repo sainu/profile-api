@@ -1,6 +1,6 @@
 package views
 
-import "github.com/sainu/profile-api/models"
+import "github.com/sainu/profile-api/pkg/models"
 
 // WebLinkView is struct of web link view
 type WebLinkView struct {

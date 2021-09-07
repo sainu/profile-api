@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
-	"github.com/sainu/profile-api/models"
-	"github.com/sainu/profile-api/views"
+	"github.com/sainu/profile-api/pkg/models"
+	"github.com/sainu/profile-api/pkg/views"
 )
 
 // SkillsController controller for skill

@@ -1,6 +1,6 @@
 package views
 
-import "github.com/sainu/profile-api/models"
+import "github.com/sainu/profile-api/pkg/models"
 
 // SocialLinkView is struct of social link view
 type SocialLinkView struct {

@@ -3,7 +3,7 @@ package server
 import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"github.com/sainu/profile-api/controllers"
+	"github.com/sainu/profile-api/pkg/controllers"
 )
 
 // NewRouter is constructor for router

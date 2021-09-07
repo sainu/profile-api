@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"github.com/sainu/profile-api/server"
+	"github.com/sainu/profile-api/pkg/server"
 )
 
 // Handler is handler function for vercel

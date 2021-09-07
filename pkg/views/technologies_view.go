@@ -1,6 +1,6 @@
 package views
 
-import "github.com/sainu/profile-api/models"
+import "github.com/sainu/profile-api/pkg/models"
 
 // TechnologyView is struct of technology view
 type TechnologyView struct {

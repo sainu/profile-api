@@ -1,6 +1,6 @@
 package views
 
-import "github.com/sainu/profile-api/models"
+import "github.com/sainu/profile-api/pkg/models"
 
 // ProfileView is struct of profile view
 type ProfileView struct {
