@@ -1,6 +1,13 @@
 package models
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+
+	"github.com/sainu/profile-api/pkg/microcms"
+)
 
 // Profile is struct of profile
 type Profile struct {
@@ -19,19 +26,21 @@ type Profile struct {
 
 // GetProfile returns a profile
 func GetProfile() *Profile {
-	return &Profile{
-		FamilyNameKanji: "道祖",
-		GivenNameKanji:  "克理",
-		FamilyNameKana:  "さいのう",
-		GivenNameKana:   "かつとし",
-		FamilyNameEn:    "Saino",
-		GivenNameEn:     "Katsutoshi",
-		Nickname:        "sainu",
-		Job:             "Software Developer",
-		Email:           "katsutoshi.saino@gmail.com",
-		Bio:             "東京都出身のエンジニア。大学在学中にインターンや受託でWeb開発を始める。その後、フリーランスを経て、マネーフォワードに入社。",
-		Location:        "Tokyo",
+	req := microcms.NewRequest("/api/v1/profile")
+	client := new(http.Client)
+	resp, err := client.Do(req)
+	if err != nil {
+		panic(err)
 	}
+	defer resp.Body.Close()
+
+	byteArray, _ := ioutil.ReadAll(resp.Body)
+	profile := new(Profile)
+	if err := json.Unmarshal(byteArray, profile); err != nil {
+		panic(err)
+	}
+
+	return profile
 }
 
 // FullNameKanji is full name in Japanese
