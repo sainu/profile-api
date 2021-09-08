@@ -1,5 +1,9 @@
 package models
 
+import (
+	"github.com/sainu/profile-api/pkg/microcms"
+)
+
 // SocialLink is struct of social link
 type SocialLink struct {
 	Name string
@@ -8,26 +12,13 @@ type SocialLink struct {
 
 // GetAllSocialLinks returns all social links
 func GetAllSocialLinks() *[]SocialLink {
-	return &[]SocialLink{
-		{
-			Name: "GitHub",
-			URL:  "https://github.com/sainu",
-		},
-		{
-			Name: "Twitter",
-			URL:  "https://twitter.com/sainuio",
-		},
-		{
-			Name: "Facebook",
-			URL:  "https://www.facebook.com/sainou.katsutoshi",
-		},
-		{
-			Name: "Wantedly",
-			URL:  "https://www.wantedly.com/id/sainu",
-		},
-		{
-			Name: "Qiita",
-			URL:  "https://qiita.com/sainu",
-		},
+	resp := microcms.GetSocialLinks()
+	var socialLinks []SocialLink
+	for _, c := range resp.Contents {
+		socialLinks = append(socialLinks, SocialLink{
+			Name: c.Name,
+			URL:  c.Url,
+		})
 	}
+	return &socialLinks
 }
