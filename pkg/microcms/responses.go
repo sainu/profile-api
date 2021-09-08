@@ -32,3 +32,18 @@ type SocialLinksResponseBody struct {
 	Offset     int8 `json:"offset"`
 	Limit      int8 `json:"limit"`
 }
+
+type SkillsResponseBody struct {
+	Contents [](struct {
+		Id          string `json:"id"`
+		CreatedAt   string `json:"createdAt"`
+		UpdatedAt   string `json:"updatedAt"`
+		PublishedAt string `json:"publishedAt"`
+		RevisedAt   string `json:"revisedAt"`
+		Name        string `json:"name"`
+		Score       uint8  `json:"score"`
+	}) `json:"contents"`
+	TotalCount int8 `json:"totalCount"`
+	Offset     int8 `json:"offset"`
+	Limit      int8 `json:"limit"`
+}
