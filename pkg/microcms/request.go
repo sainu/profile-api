@@ -10,12 +10,19 @@ var (
 	apiKey  = os.Getenv("MICRO_CMS_X_API_KEY")
 )
 
-func NewRequest(method string, path string) *http.Request {
+type option interface {
+	apply(*http.Request)
+}
+
+func NewRequest(method string, path string, options ...option) *http.Request {
 	req, _ := http.NewRequest(
 		method,
 		baseURL+path,
 		nil,
 	)
 	req.Header.Set("X-API-KEY", apiKey)
+	for _, o := range options {
+		o.apply(req)
+	}
 	return req
 }
