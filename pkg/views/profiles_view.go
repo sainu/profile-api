@@ -18,6 +18,7 @@ type ProfileView struct {
 	Email           string `json:"email"`
 	Bio             string `json:"bio"`
 	Location        string `json:"location"`
+	ProfileImageURL string `json:"profile_image_url"`
 }
 
 // NewProfileView is constructor for view of profile
@@ -37,6 +38,7 @@ func NewProfileView(profile *models.Profile) *ProfileView {
 		Email:           profile.Email,
 		Bio:             profile.Bio,
 		Location:        profile.Location,
+		ProfileImageURL: profile.ProfileImageURL,
 	}
 	return view
 }

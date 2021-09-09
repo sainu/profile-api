@@ -20,6 +20,7 @@ type Profile struct {
 	Email           string
 	Bio             string
 	Location        string
+	ProfileImageURL string
 }
 
 // GetProfile returns a profile
@@ -40,6 +41,7 @@ func GetProfile() *Profile {
 		Email:           resp.Email,
 		Bio:             resp.Bio,
 		Location:        resp.Location,
+		ProfileImageURL: resp.ProfileImage.URL,
 	}
 
 	return profile

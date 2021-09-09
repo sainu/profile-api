@@ -16,6 +16,11 @@ type ProfileResponseBody struct {
 	Email           string `json:"email"`
 	Bio             string `json:"bio"`
 	Location        string `json:"location"`
+	ProfileImage    struct {
+		URL    string `json:"url"`
+		Height string `json:"height"`
+		Width  string `json:"width"`
+	} `json:"profileImage"`
 }
 
 type SocialLinksResponseBody struct {
