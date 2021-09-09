@@ -10,7 +10,6 @@ import (
 type ExperienceView struct {
 	CompanyName    string        `json:"company_name"`
 	EmploymentType string        `json:"employment_type"`
-	Department     string        `json:"department"`
 	StartDate      string        `json:"start_date"`
 	EndDate        string        `json:"end_date"`
 	Projects       []ProjectView `json:"projects"`
@@ -24,7 +23,6 @@ func NewExperiencesView(experiences []models.Experience) []ExperienceView {
 		view = append(view, ExperienceView{
 			CompanyName:    experience.CompanyName,
 			EmploymentType: experience.EmploymentType,
-			Department:     experience.Department,
 			StartDate:      experience.StartDate.Format(time.RFC3339),
 			EndDate:        experience.EndDate.Format(time.RFC3339),
 			Projects:       NewProjectsView(experience.Projects),

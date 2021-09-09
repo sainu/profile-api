@@ -6,7 +6,6 @@ import "time"
 type Experience struct {
 	CompanyName    string
 	EmploymentType string
-	Department     string
 	StartDate      time.Time
 	EndDate        time.Time
 	Projects       []Project
@@ -29,7 +28,6 @@ func GetAllExperiences() []Experience {
 		{
 			CompanyName:    "株式会社マネーフォワード",
 			EmploymentType: FullTimeEmployment,
-			Department:     "マネーフォワードビジネスカンパニー",
 			StartDate:      time.Date(2019, 12, 1, 0, 0, 0, 0, time.Local),
 			Projects: []Project{
 				{
