@@ -16,10 +16,10 @@ type ExperienceView struct {
 }
 
 // NewExperiencesView is constructor for view of experiences
-func NewExperiencesView(experiences []models.Experience) []ExperienceView {
+func NewExperiencesView(experiences *[]models.Experience) []ExperienceView {
 	var view []ExperienceView
 
-	for _, experience := range experiences {
+	for _, experience := range *experiences {
 		view = append(view, ExperienceView{
 			CompanyName:    experience.CompanyName,
 			EmploymentType: experience.EmploymentType,
