@@ -25,8 +25,5 @@ func NewRouter() (*echo.Echo, error) {
 	socialLinksController := controllers.NewSocialLinksController()
 	router.GET("/api/social_links", socialLinksController.Index)
 
-	webLinksController := controllers.NewWebLinksController()
-	router.GET("/api/web_links", webLinksController.Index)
-
 	return router, nil
 }
