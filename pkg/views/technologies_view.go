@@ -9,15 +9,15 @@ type TechnologyView struct {
 }
 
 // NewTechnologiesView is constructor for view of technologies
-func NewTechnologiesView(technologies []models.Technology) []TechnologyView {
+func NewTechnologiesView(technologies *[]models.Technology) *[]TechnologyView {
 	var view []TechnologyView
 
-	for _, technology := range technologies {
+	for _, technology := range *technologies {
 		view = append(view, TechnologyView{
 			Name:     technology.Name,
 			Versions: technology.Versions,
 		})
 	}
 
-	return view
+	return &view
 }

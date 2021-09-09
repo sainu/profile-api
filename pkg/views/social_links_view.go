@@ -9,15 +9,15 @@ type SocialLinkView struct {
 }
 
 // NewSocialLinksView is constructor for view of social link
-func NewSocialLinksView(socialLinks []models.SocialLink) []SocialLinkView {
+func NewSocialLinksView(socialLinks *[]models.SocialLink) *[]SocialLinkView {
 	var view []SocialLinkView
 
-	for _, socialLink := range socialLinks {
+	for _, socialLink := range *socialLinks {
 		view = append(view, SocialLinkView{
 			Name: socialLink.Name,
 			URL:  socialLink.URL,
 		})
 	}
 
-	return view
+	return &view
 }

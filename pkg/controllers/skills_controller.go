@@ -19,6 +19,6 @@ func NewSkillsController() *SkillsController {
 // Index binds to /skills
 func (c *SkillsController) Index(ctx echo.Context) error {
 	skills := models.GetAllSkills()
-	view := views.NewSkillsView(*skills)
+	view := views.NewSkillsView(skills)
 	return ctx.JSON(http.StatusOK, view)
 }

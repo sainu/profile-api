@@ -8,15 +8,15 @@ import (
 
 // ExperienceView is struct of experience view
 type ExperienceView struct {
-	CompanyName    string        `json:"company_name"`
-	EmploymentType string        `json:"employment_type"`
-	StartDate      string        `json:"start_date"`
-	EndDate        string        `json:"end_date"`
-	Projects       []ProjectView `json:"projects"`
+	CompanyName    string         `json:"company_name"`
+	EmploymentType string         `json:"employment_type"`
+	StartDate      string         `json:"start_date"`
+	EndDate        string         `json:"end_date"`
+	Projects       *[]ProjectView `json:"projects"`
 }
 
 // NewExperiencesView is constructor for view of experiences
-func NewExperiencesView(experiences *[]models.Experience) []ExperienceView {
+func NewExperiencesView(experiences *[]models.Experience) *[]ExperienceView {
 	var view []ExperienceView
 
 	for _, experience := range *experiences {
@@ -25,9 +25,9 @@ func NewExperiencesView(experiences *[]models.Experience) []ExperienceView {
 			EmploymentType: experience.EmploymentType,
 			StartDate:      experience.StartDate.Format(time.RFC3339),
 			EndDate:        experience.EndDate.Format(time.RFC3339),
-			Projects:       NewProjectsView(experience.Projects),
+			Projects:       NewProjectsView(&experience.Projects),
 		})
 	}
 
-	return view
+	return &view
 }

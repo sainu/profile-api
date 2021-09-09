@@ -11,15 +11,15 @@ type SkillView struct {
 }
 
 // NewSkillsView is constructor for view of skills
-func NewSkillsView(skills []models.Skill) []SkillView {
+func NewSkillsView(skills *[]models.Skill) *[]SkillView {
 	var view []SkillView
 
-	for _, skill := range skills {
+	for _, skill := range *skills {
 		view = append(view, SkillView{
 			Name:  skill.Name,
 			Score: skill.Score,
 		})
 	}
 
-	return view
+	return &view
 }
