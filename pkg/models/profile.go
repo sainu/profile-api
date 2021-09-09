@@ -2,6 +2,7 @@ package models
 
 import (
 	"fmt"
+	"net/http"
 
 	"github.com/sainu/profile-api/pkg/microcms"
 )
@@ -25,7 +26,7 @@ type Profile struct {
 func GetProfile() *Profile {
 	client := microcms.NewClient()
 	resp := new(microcms.ProfileResponseBody)
-	client.Do(microcms.NewRequest("/api/v1/profile"), resp)
+	client.Do(microcms.NewRequest(http.MethodGet, "/api/v1/profile"), resp)
 
 	profile := &Profile{
 		FamilyNameKanji: resp.FamilyNameKanji,

@@ -10,9 +10,9 @@ var (
 	apiKey  = os.Getenv("MICRO_CMS_X_API_KEY")
 )
 
-func NewRequest(path string) *http.Request {
+func NewRequest(method string, path string) *http.Request {
 	req, _ := http.NewRequest(
-		http.MethodGet,
+		method,
 		baseURL+path,
 		nil,
 	)

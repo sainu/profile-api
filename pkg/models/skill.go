@@ -1,6 +1,10 @@
 package models
 
-import "github.com/sainu/profile-api/pkg/microcms"
+import (
+	"net/http"
+
+	"github.com/sainu/profile-api/pkg/microcms"
+)
 
 // Skill is struct of skill
 type Skill struct {
@@ -12,7 +16,7 @@ type Skill struct {
 func GetAllSkills() *[]Skill {
 	client := microcms.NewClient()
 	resp := new(microcms.SkillsResponseBody)
-	client.Do(microcms.NewRequest("/api/v1/skills"), resp)
+	client.Do(microcms.NewRequest(http.MethodGet, "/api/v1/skills"), resp)
 
 	var skills []Skill
 	for _, c := range resp.Contents {

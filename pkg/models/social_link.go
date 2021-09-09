@@ -1,6 +1,8 @@
 package models
 
 import (
+	"net/http"
+
 	"github.com/sainu/profile-api/pkg/microcms"
 )
 
@@ -14,7 +16,7 @@ type SocialLink struct {
 func GetAllSocialLinks() *[]SocialLink {
 	client := microcms.NewClient()
 	resp := new(microcms.SocialLinksResponseBody)
-	client.Do(microcms.NewRequest("/api/v1/social_links"), resp)
+	client.Do(microcms.NewRequest(http.MethodGet, "/api/v1/social_links"), resp)
 	var socialLinks []SocialLink
 	for _, c := range resp.Contents {
 		socialLinks = append(socialLinks, SocialLink{
