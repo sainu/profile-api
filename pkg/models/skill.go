@@ -16,7 +16,8 @@ type Skill struct {
 func GetAllSkills() *[]Skill {
 	client := microcms.NewClient()
 	resp := new(microcms.SkillsResponseBody)
-	client.Do(microcms.NewRequest(http.MethodGet, "/api/v1/skills"), resp)
+	client.Do(microcms.NewRequest(http.MethodGet, "/api/v1/skills",
+		microcms.WithQuery(map[string]string{"orders": "-score", "limit": "100"})), resp)
 
 	var skills []Skill
 	for _, c := range resp.Contents {
