@@ -85,3 +85,18 @@ type ExperienceResponseBody struct {
 	Offset     int8 `json:"offset"`
 	Limit      int8 `json:"limit"`
 }
+
+type LifeEventsResponseBody struct {
+	Contents [](struct {
+		Id          string `json:"id"`
+		CreatedAt   string `json:"createdAt"`
+		UpdatedAt   string `json:"updatedAt"`
+		PublishedAt string `json:"publishedAt"`
+		RevisedAt   string `json:"revisedAt"`
+		Title       string `json:"title"`
+		Date        string `json:"date"`
+	}) `json:"contents"`
+	TotalCount int8 `json:"totalCount"`
+	Offset     int8 `json:"offset"`
+	Limit      int8 `json:"limit"`
+}

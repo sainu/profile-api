@@ -16,6 +16,9 @@ func NewRouter() (*echo.Echo, error) {
 	experiencesController := controllers.NewExperiencesController()
 	router.GET("/api/experiences", experiencesController.Index)
 
+	lifeEventsController := controllers.NewLifeEventsController()
+	router.GET("/api/life_events", lifeEventsController.Index)
+
 	profilesController := controllers.NewProfilesController()
 	router.GET("/api/profile", profilesController.Show)
 
